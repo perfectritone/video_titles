@@ -9,7 +9,7 @@ class Video
     persisted_video_titles = get_persisted_video_titles
 
     if persisted_video_titles.any?
-      persisted_title = persisted_video_titles.first
+      persisted_title = persisted_video_titles.first.title
     end
   end
 
@@ -33,6 +33,6 @@ class Video
     def get_persisted_videos
       source_name = source.name
 
-      VideoPersistence.where(id: id, source: source_name)
+      Persisted::Video.where(id: id, source: source_name)
     end
 end
