@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221035658) do
+ActiveRecord::Schema.define(version: 20151221045433) do
 
   create_table "titles", force: :cascade do |t|
     t.string   "title"
-    t.integer  "video_id_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "video_id"
   end
 
-  add_index "titles", ["video_id_id"], name: "index_titles_on_video_id_id"
-
   create_table "videos", force: :cascade do |t|
-    t.string "external_id"
-    t.string "source"
+    t.string   "external_id"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
