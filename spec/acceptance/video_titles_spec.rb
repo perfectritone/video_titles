@@ -8,11 +8,11 @@ resource 'Video Titles' do
 
   get '/videos/:id/title' do
 
-    parameter :id, "ID of the video"
+    parameter :id, 'ID of the video'
 
     let(:id) { 7 }
 
-    example_request "The title returned comes from the external source" do
+    example_request 'The title returned comes from the external source' do
       expect(response_status).to eq 200
     end
   end

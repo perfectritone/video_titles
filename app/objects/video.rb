@@ -5,7 +5,7 @@ class Video
     @source = source
   end
 
-  def get_title
+  def title
     persisted_video_titles = get_persisted_video_titles
 
     if persisted_video_titles.any?
