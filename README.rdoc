@@ -1,0 +1,3 @@
+== README
+
+This application demonstrates an API and CLI that can retrieve video titles from an external API, in this case Vimeo.
