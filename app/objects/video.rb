@@ -9,7 +9,9 @@ class Video
     persisted_video_titles = get_persisted_video_titles
 
     if persisted_video_titles.any?
-      persisted_title = persisted_video_titles.first.title
+      persisted_video_titles.first.title
+    else
+      get_title_externally
     end
   end
 
@@ -34,5 +36,10 @@ class Video
       source_name = source.name
 
       Persisted::Video.where(id: id, source: source_name)
+    end
+
+    def get_title_externally
+      source_instance = source.new(id: id)
+      source_instance.get_title
     end
 end
